@@ -1,4 +1,7 @@
 import speech_recognition as sr
+
+sr.Recognizer(language = "es-GT", key = "AIzaSyBOti4mM-6x9WDnZIjIeyEU21OpBXqWBgw")
+
 def callback(recognizer, audio):                          # this is called from the background thread
     try:
         print("Has dicho: " + recognizer.recognize(audio))  # received audio data, now need to recognize it

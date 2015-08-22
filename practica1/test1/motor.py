@@ -46,7 +46,8 @@ def parar():
 
 #def __init__(self):
 #irAdelante()
-#irAtras()
+irAtras()
 #irDerecha()
 #irIzquierda()
+sleep(10)
 parar()
