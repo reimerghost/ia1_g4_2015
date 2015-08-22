@@ -1,9 +1,9 @@
 import speech_recognition as sr
 def callback(recognizer, audio):                          # this is called from the background thread
     try:
-        print("Has dicho " + recognizer.recognize(audio))  # received audio data, now need to recognize it
+        print("Has dicho: " + recognizer.recognize(audio))  # received audio data, now need to recognize it
     except LookupError:
-        print("Oops! No entendi eso")
+        print("Oops! No entendi eso.")
 r = sr.Recognizer()
 m = sr.Microphone()
 with m as source: r.adjust_for_ambient_noise(source)      # we only need to calibrate once, before we start listening

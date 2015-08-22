@@ -11,17 +11,12 @@ GPIO.setup(22, GPIO.OUT)
 GPIO.setup(23, GPIO.OUT)
 
 
-while 1:
-	GPIO.output(17, False)
-	GPIO.output(18, False)
-	GPIO.output(22, False)
-	GPIO.output(23, False)
-	sleep(1)
-	GPIO.output(17, True)
-	GPIO.output(18, True)
-	GPIO.output(22, True)
-	GPIO.output(23, True)
-	sleep(1)
+#while 1:
+GPIO.output(17, True)
+GPIO.output(18, True)
+
+GPIO.output(23, True)
+GPIO.output(22, True)
 #18 ya
 #17 ya
 #22
