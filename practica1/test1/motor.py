@@ -11,14 +11,14 @@ GPIO.setup(23, GPIO.OUT)
 
 ### -- METODOS DE MOVIMIENTO -- ###
 def irAdelante():
-	GPIO.output(17, True)
-	GPIO.output(18, False)
+	GPIO.output(17, False)
+	GPIO.output(18, True)
 	GPIO.output(23, False)
 	GPIO.output(22, True)
 
 def irAtras():
-        GPIO.output(17, False)
-        GPIO.output(18, True)
+        GPIO.output(17, True)
+        GPIO.output(18, False)
         GPIO.output(23, True)
         GPIO.output(22, False)
 
@@ -29,8 +29,8 @@ def irIzquierda():
         GPIO.output(22, True)
 
 def irDerecha():
-        GPIO.output(17, True)
-        GPIO.output(18, False)
+        GPIO.output(17, False)
+        GPIO.output(18, True)
         GPIO.output(23, False)
         GPIO.output(22, False)
 
@@ -45,9 +45,9 @@ def parar():
 #23
 
 #def __init__(self):
-#irAdelante()
-irAtras()
+irAdelante()
+#irAtras()
 #irDerecha()
 #irIzquierda()
-sleep(10)
+sleep(20)
 parar()
