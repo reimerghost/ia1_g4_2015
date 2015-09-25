@@ -70,7 +70,7 @@ public class CameraSandbox1 extends KeyAdapter implements VideoDisplayListener<M
     }
     
     public float compararImagenes(){
-        
+        return 1f;
     }
     
     public MBFImage segmentarImagen(MBFImage input){
