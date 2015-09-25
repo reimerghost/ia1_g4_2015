@@ -19,6 +19,7 @@ import org.openimaj.ml.clustering.kmeans.FloatKMeans;
 import org.openimaj.video.*;
 import org.openimaj.video.capture.VideoCapture;
 import org.openimaj.video.xuggle.*;
+import org.openimaj.video.capture.Device;
 
 /**
  * Record the webcam to a file.
@@ -31,7 +32,6 @@ public class CameraSandbox1 extends KeyAdapter implements VideoDisplayListener<M
     private VideoDisplay<MBFImage> display;
     private XuggleVideoWriter writer;
     private boolean close = false, test = false;
-    MBFImage input;
 
     /**
      * Default constructor
@@ -60,10 +60,20 @@ public class CameraSandbox1 extends KeyAdapter implements VideoDisplayListener<M
     public void beforeUpdate(MBFImage frame) {
         //write a frame 
         if (!close) {
-            writer.addFrame(frame);
+            writer.addFrame(segmentarImagen(frame));
         }
         if (test) {
-            MBFImage input = video.getCurrentFrame();
+            
+            DisplayUtilities.display(frame);
+            test = false;
+        }
+    }
+    
+    public float compararImagenes(){
+        
+    }
+    
+    public MBFImage segmentarImagen(MBFImage input){
             input = ColourSpace.convert(input, ColourSpace.CIE_Lab);
 
             FloatKMeans cluster = FloatKMeans.createExact(2);
@@ -93,12 +103,10 @@ public class CameraSandbox1 extends KeyAdapter implements VideoDisplayListener<M
                 }
                 input.drawText("Point:" + (i++), comp.calculateCentroidPixel(), HersheyFont.TIMES_MEDIUM, 20);
             }
-            System.out.println("Points: "+i);
+            System.out.println("Points: " + i);
 
             input = ColourSpace.convert(input, ColourSpace.RGB);
-            DisplayUtilities.display(input);
-            test = false;
-        }
+            return input;
     }
 
     @Override

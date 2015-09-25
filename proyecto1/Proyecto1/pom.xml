@@ -3,10 +3,10 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.usac.ia.g4</groupId>
     <artifactId>Proyecto1</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>GLADoS-0.1.0</version>
     <packaging>jar</packaging>
     
-    <name>PROYECTO1_IA</name>
+    <name>proyectoIA_G4</name>
     
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
