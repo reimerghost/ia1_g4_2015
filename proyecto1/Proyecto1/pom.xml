@@ -18,10 +18,17 @@
         <repository> 
             <id>tilab</id> 
             <url>http://jade.tilab.com/maven/</url> 
-        </repository>
+        </repository>               
     </repositories>
 
     <dependencies>
+        <!--Repositorio de PI4J-->
+        <dependency>
+            <groupId>com.pi4j</groupId>
+            <artifactId>pi4j-core</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <!--Repositorio de JADE-->
         <dependency>  
             <groupId>com.tilab.jade</groupId> 
             <artifactId>jade</artifactId> 
@@ -53,6 +60,11 @@
             <version>1.3.1</version>
         </dependency>
         <dependency>
+            <groupId>org.openimaj</groupId>
+            <artifactId>image-processing</artifactId>
+            <version>1.3.1</version>
+        </dependency>
+        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>3.8.1</version>
@@ -64,25 +76,37 @@
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>shade</goal>
-                        </goals>
-                    </execution>
-                </executions>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.4</version>
                 <configuration>
-                    <!--                    <finalName>uber-${artifactId}-${version}</finalName>-->
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <classpathPrefix>lib/</classpathPrefix>
                             <mainClass>com.usac.ia.g4.proyecto1.sandbox.CameraSandbox1</mainClass>
+                            <!--<mainClass>com.usac.ia.g4.proyecto1.rasp.ControlGpioExample</mainClass>-->
+                            <classpathPrefix>dependency-jars/</classpathPrefix>
                         </manifest>
                     </archive>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.5.1</version>
+                <executions>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>
+                                ${project.build.directory}/dependency-jars/
+                            </outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
