@@ -84,7 +84,7 @@
                     <archive>
                         <index>true</index>
                         <manifest>
-                            <mainClass>com.usac.ia.g4.proyecto1.rasp.ControlGpioExample</mainClass>
+                            <mainClass>com.usac.ia.g4.proyecto1.sandbox.CameraSandbox1</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

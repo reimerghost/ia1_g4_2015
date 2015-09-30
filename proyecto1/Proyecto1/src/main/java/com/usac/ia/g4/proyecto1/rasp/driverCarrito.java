@@ -13,7 +13,6 @@ public class driverCarrito {
 
     public void Adelante() {
         System.out.println("GO GO Adelante");
-        gpioControl.encenderPin();
     }
 
     public void Atras() {
