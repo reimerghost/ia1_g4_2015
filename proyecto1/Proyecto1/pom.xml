@@ -34,6 +34,7 @@
             <artifactId>jade</artifactId> 
             <version>4.3.3</version>  
         </dependency>
+        <!-- OPENIMAJ-->
         <dependency>
             <groupId>org.openimaj</groupId>
             <artifactId>core-image</artifactId>
@@ -84,7 +85,7 @@
                     <archive>
                         <index>true</index>
                         <manifest>
-                            <mainClass>com.usac.ia.g4.proyecto1.sandbox.CameraSandbox1</mainClass>
+                            <mainClass>com.usac.ia.g4.proyecto1.rasp.testingCarrito</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
