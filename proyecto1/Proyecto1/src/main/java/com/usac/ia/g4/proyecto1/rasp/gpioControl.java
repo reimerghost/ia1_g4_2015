@@ -18,10 +18,14 @@ import com.pi4j.io.gpio.RaspiPin;
 public class gpioControl {
 
     // create gpio controller
-
     final static GpioController gpio = GpioFactory.getInstance();
     final static GpioPinDigitalOutput pin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "MyLED", PinState.HIGH);
 
+    public gpioControl(){
+        pin.low();
+        System.out.println("--> GPIO state should be: OFF");
+    }
+    
     public static void encenderPin() {
         // provision gpio pin #01 as an output pin and turn on
         // set shutdown state for this pin

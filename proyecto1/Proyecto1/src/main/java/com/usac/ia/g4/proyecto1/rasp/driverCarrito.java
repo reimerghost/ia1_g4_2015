@@ -20,11 +20,11 @@ public class driverCarrito {
     }
 
     public void giraIzquierda() {
-        System.out.println("90° a las Izquierda");
+        System.out.println("90g a las Izquierda");
     }
 
     public void giraDerecha() {
-        System.out.println("90° a la Derecha");
+        System.out.println("90g a la Derecha");
     }
 
 }
