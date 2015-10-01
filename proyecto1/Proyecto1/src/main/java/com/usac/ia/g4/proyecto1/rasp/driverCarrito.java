@@ -56,4 +56,12 @@ public class driverCarrito {
         System.out.println("90g a la Derecha");
     }
 
+    public void apagaTodo() {
+        gc.apagaTodo();
+    }
+
+    public void getPinStatus() {
+        gc.getPinStatus();
+    }
+
 }

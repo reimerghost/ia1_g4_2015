@@ -18,7 +18,7 @@ public class testingCarrito {
     public static void main(String[] args) {
         boolean exit = false;
         driverCarrito dc = new driverCarrito();
-        gpioControl gc = new gpioControl(7);
+//        gpioControl gc = new gpioControl(7);
         while (!exit) {
             try {
                 int s = (char) System.in.read();
@@ -26,33 +26,33 @@ public class testingCarrito {
                     case 'w':
                         dc.Adelante();
                         break;
-//                    case 'a':
-//                        dc.giraIzquierda();
+                    case 'a':
+                        dc.giraIzquierda();
+                        break;
+                    case 's':
+                        dc.Atras();
+                        break;
+                    case 'd':
+                        dc.giraDerecha();
+                        break;
+//                        TESTING CHEATCODE
+//                    case '1':
+//                        gc.tooglePin(2);
 //                        break;
-//                    case 's':
-//                        dc.Atras();
+//                    case '2':
+//                        gc.tooglePin(3);
 //                        break;
-//                    case 'd':
-//                        dc.giraDerecha();
+//                    case '3':
+//                        gc.tooglePin(0);
 //                        break;
-                        //TESTING CHEATCODE
-                    case '1':
-                        gc.tooglePin(2);
-                        break;
-                    case '2':
-                        gc.tooglePin(3);
-                        break;
-                    case '3':
-                        gc.tooglePin(0);
-                        break;
-                    case '4':
-                        gc.tooglePin(1);
-                        break;
+//                    case '4':
+//                        gc.tooglePin(1);
+//                        break;
                     case 'x':
-                        gc.apagaTodo();
+                        dc.apagaTodo();
                         break;
                     case 'z':
-                        gc.getPinStatus();
+                        dc.getPinStatus();
                         break;
                     default:
                         System.out.println(s);
