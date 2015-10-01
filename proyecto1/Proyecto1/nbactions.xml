@@ -4,7 +4,6 @@
             <actionName>CUSTOM-clean package</actionName>
             <displayName>clean package</displayName>
             <goals>
-                <goal>mvn</goal>
                 <goal>clean</goal>
                 <goal>package</goal>
             </goals>
@@ -50,6 +49,16 @@
             <properties>
                 <exec.args>-classpath %classpath jade.Boot -gui hal9000:com.usac.ia.g4.proyecto1.agente.RobotAgent</exec.args>
                 <exec.executable>java</exec.executable>
+            </properties>
+        </action>
+        <action>
+            <actionName>CUSTOM-package</actionName>
+            <displayName>package</displayName>
+            <goals>
+                <goal>package</goal>
+            </goals>
+            <properties>
+                <skipTests>true</skipTests>
             </properties>
         </action>
     </actions>

@@ -17,21 +17,16 @@ public class driverCarrito {
     gpioControl gc;
 
     public driverCarrito() {
-        gc = new gpioControl();
+        gc = new gpioControl(8);
     }
 
     public void Adelante() {
-        try {
-            gc.encenderPin();
-            Thread.sleep(5000);
-            gc.apagarPin();
+            gc.encenderPin(1);
             System.out.println("GO GO Adelante");
-        } catch (InterruptedException ex) {
-            Logger.getLogger(driverCarrito.class.getName()).log(Level.SEVERE, null, ex);
-        }
     }
 
     public void Atras() {
+        gc.apagarPin(1);
         System.out.println("Atras");
     }
 

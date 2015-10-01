@@ -18,22 +18,42 @@ public class testingCarrito {
     
     public static void main(String[] args) {
         boolean exit = false;
-        driverCarrito dc = new driverCarrito();
+//        driverCarrito dc = new driverCarrito();
+        gpioControl gc = new gpioControl(8);
         while (!exit) {
             try {
                 int s = (char) System.in.read();
                 switch ((char) s) {
-                    case 'w':
-                        dc.Adelante();
+//                    case 'w':
+//                        dc.Adelante();
+//                        break;
+//                    case 'a':
+//                        dc.giraIzquierda();
+//                        break;
+//                    case 's':
+//                        dc.Atras();
+//                        break;
+//                    case 'd':
+//                        dc.giraDerecha();
+//                        break;
+                        //TESTING CHEATCODE
+                    case '1':
+                        gc.tooglePin(2);
                         break;
-                    case 'a':
-                        dc.giraIzquierda();
+                    case '2':
+                        gc.tooglePin(3);
                         break;
-                    case 's':
-                        dc.Atras();
+                    case '3':
+                        gc.tooglePin(0);
                         break;
-                    case 'd':
-                        dc.giraDerecha();
+                    case '4':
+                        gc.tooglePin(1);
+                        break;
+                    case 'x':
+                        gc.apagaTodo();
+                        break;
+                    case 'z':
+                        gc.getPinStatus();
                         break;
                     default:
                         System.out.println(s);

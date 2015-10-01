@@ -125,7 +125,7 @@ public class CameraSandbox1 extends KeyAdapter implements VideoDisplayListener<M
         Snapshot(img, "compara");
 
         double distanceScore = histograms.get(0).compare(histograms.get(1), DoubleFVComparison.EUCLIDEAN);
-        return (1 - distanceScore) * 100;
+        return distanceScore;
     }
 
     /**
