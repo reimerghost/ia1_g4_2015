@@ -14,54 +14,85 @@ import java.util.logging.Logger;
  */
 public class driverCarrito {
 
-    gpioControl gc;
+    private gpioControl gc;
+    private String statusCarrito;
+    private int testMode;
 
     public driverCarrito() {
         gc = new gpioControl(8);
+        testMode = 0;
+        apagaTodo();
+    }
+
+    public driverCarrito(String cheat) {
+        if (cheat.toLowerCase().equals("debug")) {
+            testMode = 1;
+            apagaTodo();
+        }
     }
 
     public void Adelante() {
-        gc.apagaTodo();
-        gc.apagarPin(2);
-        gc.encenderPin(3);
-        gc.encenderPin(0);
-        gc.apagarPin(1);
+        if (testMode == 0) {
+            gc.apagaTodo();
+            gc.apagarPin(2);
+            gc.encenderPin(3);
+            gc.encenderPin(0);
+            gc.apagarPin(1);
+        }
+        statusCarrito = "ADELANTE";
         System.out.println("GO GO Adelante");
     }
 
     public void Atras() {
-        gc.apagaTodo();
-        gc.encenderPin(2);
-        gc.apagarPin(3);
-        gc.apagarPin(0);
-        gc.encenderPin(1);
+        if (testMode == 0) {
+            gc.apagaTodo();
+            gc.encenderPin(2);
+            gc.apagarPin(3);
+            gc.apagarPin(0);
+            gc.encenderPin(1);
+        }
+        statusCarrito = "ATRAS";
         System.out.println("Atras");
     }
 
     public void giraIzquierda() {
-        gc.apagaTodo();
-        gc.encenderPin(2);
-        gc.apagarPin(3);
-        gc.encenderPin(0);
-        gc.apagarPin(1);
+        if (testMode == 0) {
+            gc.apagaTodo();
+            gc.encenderPin(2);
+            gc.apagarPin(3);
+            gc.encenderPin(0);
+            gc.apagarPin(1);
+        }
+        statusCarrito = "GIRANDO IZQ";
         System.out.println("90g a las Izquierda");
     }
 
     public void giraDerecha() {
-        gc.apagaTodo();
-        gc.apagarPin(2);
-        gc.encenderPin(3);
-        gc.apagarPin(0);
-        gc.encenderPin(1);
+        if (testMode == 0) {
+            gc.apagaTodo();
+            gc.apagarPin(2);
+            gc.encenderPin(3);
+            gc.apagarPin(0);
+            gc.encenderPin(1);
+        }
+        statusCarrito = "GIRANDO DER";
         System.out.println("90g a la Derecha");
     }
 
     public void apagaTodo() {
-        gc.apagaTodo();
+        if (testMode == 0) {
+            gc.apagaTodo();
+        }        
+        statusCarrito = "APAGADO";
+        System.out.println("APAGA TODO");
     }
 
     public void getPinStatus() {
-        gc.getPinStatus();
+        if (testMode == 0) {
+            gc.getPinStatus();
+        }
+        
+        System.out.println("STATUS: "+statusCarrito);
     }
 
 }

@@ -17,7 +17,7 @@ public class testingCarrito {
     
     public static void main(String[] args) {
         boolean exit = false;
-        driverCarrito dc = new driverCarrito();
+        driverCarrito dc = new driverCarrito("debug");
 //        gpioControl gc = new gpioControl(7);
         while (!exit) {
             try {
@@ -53,6 +53,9 @@ public class testingCarrito {
                         break;
                     case 'z':
                         dc.getPinStatus();
+                        break;
+                    case (char)10:                    
+                        System.out.println("---");
                         break;
                     default:
                         System.out.println(s);
