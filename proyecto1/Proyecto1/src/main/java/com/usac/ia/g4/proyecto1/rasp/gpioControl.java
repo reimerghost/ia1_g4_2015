@@ -19,21 +19,21 @@ public class gpioControl {
 
     // create gpio controller
     final static GpioController gpio = GpioFactory.getInstance();
-    final static GpioPinDigitalOutput pin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "MyLED", PinState.HIGH);
+    final static GpioPinDigitalOutput pin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_00, "MyLED", PinState.HIGH);
 
     public gpioControl(){
         pin.low();
         System.out.println("--> GPIO state should be: OFF");
     }
     
-    public static void encenderPin() {
-        // provision gpio pin #01 as an output pin and turn on
+    public void encenderPin() {
         // set shutdown state for this pin
-        pin.setShutdownOptions(true, PinState.LOW);
+        pin.setShutdownOptions(true, PinState.HIGH);
     }
 
     public void apagarPin() {
-
+        // set shutdown state for this pin
+        pin.setShutdownOptions(true, PinState.HIGH);
     }
 
 }
