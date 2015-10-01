@@ -86,8 +86,7 @@ public class gpioControl {
     public void apagaTodo(){
         Iterator<GpioPinDigitalOutput> i = pin.iterator();
         while(i.hasNext()){
-            i.next().low();
-            
+            i.next().low();            
         }
     }
     
@@ -102,6 +101,7 @@ public class gpioControl {
                 s+=0;
             }
         }
+        System.out.println(s);
     }
 
 }

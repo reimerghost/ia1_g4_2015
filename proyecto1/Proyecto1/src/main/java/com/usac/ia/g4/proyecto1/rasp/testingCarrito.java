@@ -19,7 +19,7 @@ public class testingCarrito {
     public static void main(String[] args) {
         boolean exit = false;
 //        driverCarrito dc = new driverCarrito();
-        gpioControl gc = new gpioControl(8);
+        gpioControl gc = new gpioControl(7);
         while (!exit) {
             try {
                 int s = (char) System.in.read();
