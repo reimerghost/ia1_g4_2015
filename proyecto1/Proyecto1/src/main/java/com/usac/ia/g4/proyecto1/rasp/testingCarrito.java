@@ -13,20 +13,19 @@ import java.util.logging.Logger;
  *
  * @author reimer
  */
-public class testingCarrito {
-
+public class testingCarrito {   
     
     public static void main(String[] args) {
         boolean exit = false;
-//        driverCarrito dc = new driverCarrito();
+        driverCarrito dc = new driverCarrito();
         gpioControl gc = new gpioControl(7);
         while (!exit) {
             try {
                 int s = (char) System.in.read();
                 switch ((char) s) {
-//                    case 'w':
-//                        dc.Adelante();
-//                        break;
+                    case 'w':
+                        dc.Adelante();
+                        break;
 //                    case 'a':
 //                        dc.giraIzquierda();
 //                        break;

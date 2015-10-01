@@ -21,20 +21,38 @@ public class driverCarrito {
     }
 
     public void Adelante() {
-            gc.encenderPin(1);
-            System.out.println("GO GO Adelante");
+        gc.apagaTodo();
+        gc.apagarPin(2);
+        gc.encenderPin(3);
+        gc.encenderPin(0);
+        gc.apagarPin(1);
+        System.out.println("GO GO Adelante");
     }
 
     public void Atras() {
-        gc.apagarPin(1);
+        gc.apagaTodo();
+        gc.encenderPin(2);
+        gc.apagarPin(3);
+        gc.apagarPin(0);
+        gc.encenderPin(1);
         System.out.println("Atras");
     }
 
     public void giraIzquierda() {
+        gc.apagaTodo();
+        gc.encenderPin(2);
+        gc.apagarPin(3);
+        gc.encenderPin(0);
+        gc.apagarPin(1);
         System.out.println("90g a las Izquierda");
     }
 
     public void giraDerecha() {
+        gc.apagaTodo();
+        gc.apagarPin(2);
+        gc.encenderPin(3);
+        gc.apagarPin(0);
+        gc.encenderPin(1);
         System.out.println("90g a la Derecha");
     }
 
