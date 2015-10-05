@@ -5,6 +5,8 @@
  */
 package com.usac.ia.g4.proyecto1.agente;
 
+import com.usac.ia.g4.proyecto1.rasp.driverCarrito;
+import com.usac.ia.g4.proyecto1.rasp.testingCarrito;
 import jade.core.AID;
 import jade.core.Agent;
 
@@ -22,6 +24,10 @@ public class RobotAgent extends Agent{
     
     public void setup(){
         System.out.println("Hola mundo, el agente"+getLocalName()+" está listo.");
+        
+        driverCarrito dc = new driverCarrito("debug");
+        System.out.println("");
+        
         //Obteniendo parámetros
         Object[] args = getArguments();
         if(args != null && args.length > 0){
